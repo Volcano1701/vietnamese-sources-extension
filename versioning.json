@@ -2,6 +2,7 @@
     "buildTime": "2025-05-22T00:00:00.000Z",
     "sources": [
         {
+            "id": "combined-vietnamese-sources",
             "name": "Combined Vietnamese Sources",
             "version": "0.0.1",
             "icon": "icon.png",
