@@ -1,0 +1,15 @@
+{
+    "buildTime": "2025-05-22T00:00:00.000Z",
+    "sources": [
+        {
+            "name": "Combined Vietnamese Sources",
+            "version": "0.0.1",
+            "icon": "icon.png",
+            "author": "Manus",
+            "description": "Extension that combines TruyenGG, MimiHentai, and NHentai sources",
+            "contentRating": "ADULT",
+            "websiteBaseURL": "",
+            "repo": "https://github.com/Volcano1701/vietnamese-sources-extension"
+        }
+    ]
+}
