@@ -1,24 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Combined Vietnamese Sources for Paperback</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnamese Sources for Paperback</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --background-color: #f5f5f5;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --adult-tag-color: #e74c3c;
+            --recommended-tag-color: #2ecc71;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .beta-tag {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(15deg);
+            border-radius: 4px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: var(--text-color);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-top: 0;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .add-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .add-button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .description {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .info-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .url-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+        
+        .url-box h3 {
+            margin-top: 0;
+        }
+        
+        .url {
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        .sources-list {
+            margin-top: 40px;
+        }
+        
+        .sources-list h3 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .sources-list ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .sources-list li {
+            background-color: var(--card-color);
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .sources-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tag {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .tag-18 {
+            background-color: var(--adult-tag-color);
+        }
+        
+        .tag-recommended {
+            background-color: var(--recommended-tag-color);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .sources-list ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
-        <h1>Combined Vietnamese Sources for Paperback</h1>
-        <p>Add this extension to Paperback to read manga from TruyenGG, MimiHentai, and NHentai.</p>
+    <div class="container">
+        <header>
+            <div class="logo" style="margin: 0 auto;">
+                <img src="icon.png" alt="Vietnamese Sources Logo">
+                <div class="beta-tag">BETA</div>
+            </div>
+            <h1>Vietnamese Sources</h1>
+            <p class="subtitle">A Paperback extensions repository</p>
+            <a href="paperback://addRepo?url=https://Volcano1701.github.io/vietnamese-sources-extension" class="add-button">Add to Paperback</a>
+        </header>
         
-        <h2>Installation</h2>
-        <p>To add this source to Paperback:</p>
-        <ol>
-            <li>Open Paperback</li>
-            <li>Go to Settings > Sources > Add a new source</li>
-            <li>Enter this URL: <code>https://Volcano1701.github.io/vietnamese-sources-extension</code></li>
-            <li>Click "Add"</li>
-            <li>Install the extension</li>
-        </ol>
+        <div class="description">
+            <p>Vietnamese manga sources for Paperback including TruyenGG, MimiHentai, and NHentai</p>
+        </div>
+        
+        <div class="info-box">
+            <p>A guide is available to learn everything about extensions repositories.</p>
+            <p>Check it <a href="https://paperback.moe/help/guides/adding-repos/">here</a> to learn how to add and use this repository in Paperback.</p>
+        </div>
+        
+        <div class="info-box">
+            <p>On a Paperback installed device, press <a href="paperback://addRepo?url=https://Volcano1701.github.io/vietnamese-sources-extension">Add to Paperback</a> or use the base URL to add this repository to the app.</p>
+        </div>
+        
+        <div class="url-box">
+            <h3>Base URL:</h3>
+            <div class="url">https://Volcano1701.github.io/vietnamese-sources-extension</div>
+        </div>
+        
+        <div class="sources-list">
+            <h3>Available Sources:</h3>
+            <ul>
+                <li>
+                    TruyenGG
+                    <span class="tag tag-recommended">Recommended</span>
+                    <span class="tag" style="background-color: #9b59b6;">Cloudflare</span>
+                </li>
+                <li>
+                    MimiHentai
+                    <span class="tag tag-18">18+</span>
+                </li>
+                <li>
+                    NHentai
+                    <span class="tag tag-18">18+</span>
+                </li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Created by Manus for private use</p>
+            <p>© 2025 Vietnamese Sources for Paperback</p>
+        </footer>
     </div>
 </body>
 </html>
